@@ -1,0 +1,178 @@
+/* ===== OneService.css ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap');
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --accent-orange: #ff6b35; /* Orange highlight */
+  --accent-green: #28a745;  /* Green highlight */
+  --danger-red: #dc3545;
+  --card-bg: #ffffff;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+.service-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  background: var(--bg-color);
+  min-height: 90vh;
+}
+
+.service-details-card {
+  max-width: 700px;
+  width: 100%;
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.service-details-card:hover {
+  transform: translateY(-6px);
+}
+
+.details-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.service-details-card:hover .details-image {
+  transform: scale(1.05);
+}
+
+.service-details-card h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.details-description {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.details-price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--accent-orange);
+}
+
+/* ==== Buttons ==== */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Common button style */
+.book-now-button {
+  padding: 0.9rem 1.8rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+/* Book Now (for users) */
+.book-now-button {
+  background: var(--accent-green);
+  color: #fff;
+}
+
+.book-now-button:hover {
+  background: #1e7e34;
+  transform: translateY(-2px);
+}
+
+/* Update (for providers) */
+.book-now-button.update-button {
+  background: var(--accent-orange);
+  color: #fff;
+}
+
+.book-now-button.update-button:hover {
+  background: #e85c2a;
+  transform: translateY(-2px);
+}
+
+/* Delete (for providers) */
+.book-now-button.delete-button {
+  background: var(--danger-red);
+  color: #fff;
+}
+
+.book-now-button.delete-button:hover {
+  background: #b52a36;
+  transform: translateY(-2px);
+}
+
+/* Confirm Delete (strong warning) */
+.book-now-button.delete-confirm {
+  background: #000;
+  color: #fff;
+  border: 2px solid var(--danger-red);
+}
+
+.book-now-button.delete-confirm:hover {
+  background: var(--danger-red);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Messages */
+.loading,
+.error,
+.not-found {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-details-card {
+    padding: 2rem 1rem;
+  }
+
+  .details-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .service-details-card h1 {
+    font-size: 1.6rem;
+  }
+
+  .details-description {
+    font-size: 0.95rem;
+  }
+
+  .book-now-button {
+    min-width: 120px;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.3rem;
+  }
+}

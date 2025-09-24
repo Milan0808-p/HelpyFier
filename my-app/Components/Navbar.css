@@ -1,0 +1,401 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 15px 40px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: "Poppins", "Roboto", sans-serif;
+  flex-wrap: nowrap;
+}
+
+/* ===== Logo ===== */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.navbar-logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo img:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Links ===== */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.navbar-links li {
+  position: relative;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.navbar-links a:hover {
+  color: #ff6b35;
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff6b35;
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* ===== Search Bar ===== */
+.search-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap:1px;
+  position: relative;
+  border: 0.8px solid #000;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border-radius: 20px;
+  outline: none;
+  background: #fff;
+  font-size: 0.95rem;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.search-button {
+  background: #ff6b35;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-button:hover {
+  background: #e85a2a;
+  transform: scale(1.1);
+}
+
+/* ===== Dropdown (Search Results) ===== */
+.search-results-dropdown {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 220px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  color: #111;
+  padding: 10px;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.search-results-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results-dropdown li {
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-results-dropdown li:hover {
+  background: #28a745;
+  color: #fff;
+}
+
+.search-results-dropdown p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ===== Auth Buttons ===== */
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-cta {
+  background: #ff6b35;
+  color: #fff;
+  padding: 0.5rem 1.3rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar-cta:hover {
+  background: #e85a2a;
+  transform: translateY(-2px);
+}
+
+.fa-bag-shopping {
+  font-size: 1.4rem;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.fa-bag-shopping:hover {
+  color: #28a745;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Hamburger Menu ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #111;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Toggle animation when open */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===== Mobile Menu (Slide-in from Right) ===== */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: fixed;
+  top: 0;
+  right: -250px; /* hidden by default */
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  padding: 60px 20px;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.15);
+  transition: right 0.3s ease;
+  z-index: 1200;
+}
+
+.mobile-menu.show {
+  right: 0; /* Slide in */
+}
+
+/* Overlay */
+/* Right-side overlay for mobile menu */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0; /* full screen overlay */
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 999; /* behind menu but above content */
+}
+
+.menu-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .search-container {
+    display: none;
+  }
+  .navbar {
+    padding: 10px 20px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .navbar-links a {
+    font-size: 0.9rem;
+  }
+  .navbar-cta {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+  .fa-bag-shopping {
+    font-size: 1.2rem;
+  }
+  .provider-link1{
+    display: none;
+  }
+  .provider-link2{
+    display: none;
+  }
+  .menu-toggle { display: flex; }
+  .auth-buttons {
+    display: none;
+  }
+  .user-link{
+    display: none;
+  }
+}
+
+
+@media (max-width: 630px) {
+  
+  .navbar-links {
+    gap: 40px;
+  }
+  .navbar-cta {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+  .fa-bag-shopping {
+    font-size: 1.2rem;
+  }
+  
+  
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap; /* Ensure single row */
+    padding: 10px 15px; /* Reduce padding to fit small screens */
+  }
+  .navbar-logo {
+    margin-right: 10px; /* Minimal spacing */
+  }
+  .navbar-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch; /* Align links in same row as logo */
+    gap: 1rem;
+    font-size: 0.5rem;
+  }
+}
+
+
+
+@media screen and (max-width: 450px) {
+  .navbar-links {
+    gap: 0.5rem; /* Further reduce gap between links */
+    font-size: 0.4rem; /* Further reduce font size */
+  }
+  .navbar-logo img {
+    height: 40px; /* Reduce logo size */
+  }
+  .navbar {
+    padding: 8px 10px; /* Further reduce padding */
+  }
+  .navbar-links a {
+    padding: 4px 6px; /* Add padding to links for better touch targets */
+  }
+  .navbar-links a::after {
+    bottom: -4px; /* Adjust underline position */
+  }
+  .navbar-cta {
+    padding: 0.3rem 0.8rem; /* Reduce button padding */
+    font-size: 0.8rem; /* Reduce button font size */
+  }
+  .fa-bag-shopping {
+    font-size: 1rem; /* Reduce icon size */
+  }
+
+}
+
+@media screen and (max-width: 350px) {
+    .navbar-links {
+      gap: 0.3rem; /* Further reduce gap between links */
+      font-size: 0.35rem; /* Further reduce font size */
+    }
+    .navbar-logo img {
+      height: 35px; /* Further reduce logo size */
+    }
+    .navbar {
+      padding: 6px 8px;
+      font-size: 1px; /* Further reduce padding */
+    }
+    .navbar-links a {
+      padding: 3px 5px; /* Add padding to links for better touch targets */
+    }
+    .navbar-links a::after {
+      bottom: -3px; /* Adjust underline position */
+    }
+    .navbar-cta {
+      padding: 0.2rem 0.6rem; /* Reduce button padding */
+      font-size: 0.7rem; /* Reduce button font size */
+    }
+    .fa-bag-shopping {
+      font-size: 0.9rem; /* Reduce icon size */
+    }
+}
+  

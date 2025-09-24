@@ -1,0 +1,88 @@
+/* Services.css */
+
+/* --- Main container for the form --- */
+.service-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7f9fc;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- The main card that holds the form --- */
+.service-details-card {
+  max-width: 550px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  text-align: center;
+}
+
+/* --- Form input and textarea styles --- */
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1b72e8;
+  box-shadow: 0 0 0 2px rgba(27, 114, 232, 0.2);
+}
+
+/* --- Button styles for the form --- */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.book-now-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.book-now-button[type="submit"] {
+  background-color: #1b72e8;
+  color: #fff;
+}
+
+.book-now-button[type="submit"]:hover {
+  background-color: #1565c0;
+}
+
+.book-now-button[type="button"] {
+  background-color: #f0f0f0;
+  color: #555;
+}
+
+.book-now-button[type="button"]:hover {
+  background-color: #e0e0e0;
+}

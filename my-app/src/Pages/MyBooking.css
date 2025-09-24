@@ -1,0 +1,182 @@
+/* ---------- Existing Styling ---------- */
+.my-bookings-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #333;
+}
+
+.my-bookings-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.my-bookings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.booking-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.service-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin-bottom: 10px;
+}
+
+.provider-name,
+.booking-date,
+.booking-time,
+.booking-status,
+.booking-notes {
+  font-size: 0.95rem;
+  margin: 6px 0;
+  color: #555;
+}
+
+.booking-status span {
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.status-pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-confirmed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-cancelled {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.status-completed {
+  background: #e6f0ff;
+  color: #004080;
+}
+
+.no-bookings-message {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 40px;
+  color: #777;
+}
+
+.loading-message,
+.error-message {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.1rem;
+}
+
+.error-message {
+  color: #d9534f;
+}
+
+/* ---------- Tabs ---------- */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: none;
+  background: #f1f1f1;
+  color: #333;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background: #ff6600;
+  color: #fff;
+  font-weight: 600;
+  transform: scale(1.05);
+}
+
+.tab-btn:hover {
+  background: #ff8533;
+  color: #fff;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .my-bookings-container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .my-bookings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-name {
+    font-size: 1.1rem;
+  }
+
+  .provider-name,
+  .booking-date,
+  .booking-time,
+  .booking-status,
+  .booking-notes {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .my-bookings-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .booking-card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .my-bookings-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .booking-card {
+    padding: 12px;
+  }
+
+  .service-name {
+    font-size: 1rem;
+  }
+}

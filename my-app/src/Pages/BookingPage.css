@@ -1,0 +1,220 @@
+/* ===== General Styles ===== */
+.booking-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+.booking-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ff6b35;
+}
+
+.booking-description {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.booking-price {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #111;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.booking-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-form label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.booking-form input,
+.booking-form textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus {
+  border-color: #ff6b35;
+  box-shadow: 0 0 5px rgba(255,107,53,0.3);
+}
+
+.booking-form textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.booking-form button {
+  background: #ff6b35;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.booking-form button:hover {
+  background: #e85a2a;
+  transform: translateY(-2px);
+}
+
+/* Success and Error messages */
+.success {
+  color: #28a745;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.error {
+  color: #ff3b3b;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.loading,
+.not-found {
+  text-align: center;
+  font-size: 1rem;
+  margin: 30px 0;
+  color: #666;
+}
+
+/* ===== Responsive ===== */
+
+/* For tablets: max-width 900px */
+@media screen and (max-width: 900px) {
+  .booking-container {
+    padding: 20px 30px;
+  }
+  .booking-title {
+    font-size: 1.8rem;
+  }
+  .booking-price {
+    font-size: 1rem;
+  }
+}
+
+/* For small tablets: max-width 700px */
+@media screen and (max-width: 700px) {
+  .booking-container {
+    padding: 15px 20px;
+  }
+  .booking-title {
+    font-size: 1.6rem;
+  }
+  .booking-form input,
+  .booking-form textarea {
+    font-size: 0.95rem;
+  }
+  .booking-form button {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+  }
+}
+
+/* For medium mobiles: max-width 600px */
+@media screen and (max-width: 600px) {
+  .booking-container {
+    margin: 30px 15px;
+    padding: 15px;
+  }
+  .booking-title {
+    font-size: 1.4rem;
+  }
+  .booking-price {
+    font-size: 0.95rem;
+  }
+  .booking-form input,
+  .booking-form textarea {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+  .booking-form button {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+}
+
+/* For small mobiles: max-width 500px */
+@media screen and (max-width: 500px) {
+  .booking-container {
+    padding: 10px 15px;
+  }
+  .booking-title {
+    font-size: 1.3rem;
+  }
+  .booking-price {
+    font-size: 0.9rem;
+  }
+  .booking-form input,
+  .booking-form textarea {
+    font-size: 0.85rem;
+  }
+  .booking-form button {
+    font-size: 0.85rem;
+    padding: 7px 12px;
+  }
+}
+
+/* For very small mobiles: max-width 400px */
+@media screen and (max-width: 400px) {
+  .booking-title {
+    font-size: 1.2rem;
+  }
+  .booking-price {
+    font-size: 0.85rem;
+  }
+  .booking-form input,
+  .booking-form textarea {
+    font-size: 0.8rem;
+  }
+  .booking-form button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+/* For extra small mobiles: max-width 300px */
+@media screen and (max-width: 300px) {
+  .booking-container {
+    padding: 8px 10px;
+  }
+  .booking-title {
+    font-size: 1rem;
+  }
+  .booking-price {
+    font-size: 0.8rem;
+  }
+  .booking-form input,
+  .booking-form textarea {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+  .booking-form button {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+}

@@ -1,0 +1,210 @@
+/* ===== Services.css ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap');
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --accent-color: #ff6b35; /* Vibrant Orange */
+  --accent-alt: #28a745;  /* Modern Green */
+  --card-bg: #ffffffcc;   /* Glass effect */
+  --border-color: rgba(0,0,0,0.05);
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.servicepage-container {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.servicepage-title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.servicepage-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--accent-color);
+  margin: 0.8rem auto 0;
+  border-radius: 2px;
+}
+
+.servicepage-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.servicepage-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.servicepage-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,107,53,0.15) 0%, transparent 70%);
+  transform: scale(0);
+  transition: transform 0.4s ease;
+}
+
+.servicepage-card:hover::before {
+  transform: scale(1);
+}
+
+.servicepage-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.servicepage-card img.service-image {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.servicepage-card:hover img.service-image {
+  transform: scale(1.1);
+}
+
+.servicepage-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.servicepage-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0.9rem;
+  min-height: 50px;
+}
+
+.servicepage-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 1.2rem;
+}
+
+/* Action Buttons */
+.action-button {
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.buy-button {
+  background: var(--accent-alt);
+  color: #fff;
+}
+
+.buy-button:hover {
+  background: #1e7e34;
+  transform: translateY(-2px);
+}
+
+.edit-button {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+.edit-button:hover {
+  background: #e85c2a;
+  transform: translateY(-2px);
+}
+
+.delete-button {
+  background: #dc3545;
+  color: #fff;
+}
+
+.delete-button:hover {
+  background: #b52a36;
+  transform: translateY(-2px);
+}
+
+.loading-message,
+.error-message,
+.no-services-message {
+  text-align: center;
+  font-size: 1.15rem;
+  color: #555;
+  margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .servicepage-title {
+    font-size: 1.8rem;
+  }
+
+  .servicepage-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .servicepage-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .servicepage-card img.service-image {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+
+.search-result-message {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.no-services-message {
+  text-align: center;
+  font-size: 1rem;
+  margin: 20px 0;
+  color: #888;
+}

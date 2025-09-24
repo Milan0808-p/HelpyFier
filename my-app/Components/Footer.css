@@ -1,0 +1,58 @@
+/* Footer Styling */
+.footer {
+  background: white; /* black background */
+  color: #000; /* white text */
+  padding: 25px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  flex-wrap: wrap;
+  border-top: 2px solid #ff6600; /* accent orange line */
+}
+
+/* Footer left section (copyright) */
+.footer div:first-child {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Footer links container */
+.footer-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+}
+
+/* Footer links */
+.footer-links a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.2s;
+}
+
+/* Accent hover */
+.footer-links a:hover {
+  color: #ff6600; /* orange accent */
+  transform: scale(1.05);
+}
+
+/* Separator | styling */
+.footer-links span {
+  color: #555;
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
